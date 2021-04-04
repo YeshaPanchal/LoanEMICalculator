@@ -1,0 +1,4 @@
+Steps needs to follow :-
+1). Run script.sql in your database and verify that 'LoanEMICalculator' db is created or not.
+2). Change connection string in project's web.config file 
+3). Then run main project 'LoanEMICalculator'.

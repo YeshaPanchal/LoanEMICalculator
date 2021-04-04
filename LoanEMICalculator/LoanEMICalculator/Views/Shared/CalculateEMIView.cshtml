@@ -1,0 +1,61 @@
+﻿
+@model IEnumerable<LoanEMICalculator.Entities.tblLoanEMITransaction>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.InstallmentNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Opening)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Principle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Interest)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Closing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CummulativeInterest)
+        </th>
+        @*<th></th>*@
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstallmentNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Opening)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Principle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Interest)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Closing)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CummulativeInterest)
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+

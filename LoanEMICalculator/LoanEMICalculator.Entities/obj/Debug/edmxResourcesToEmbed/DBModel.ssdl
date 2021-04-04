@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LoanEMICalculatorModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblLoanCriteria">
+    <Key>
+      <PropertyRef Name="LoanCriteriaID" />
+    </Key>
+    <Property Name="LoanCriteriaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LoanAmount" Type="int" Nullable="false" />
+    <Property Name="LoanInterest" Type="float" Nullable="false" />
+    <Property Name="NoOfYears" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblLoanEMITransaction">
+    <Key>
+      <PropertyRef Name="LoanEMITransID" />
+    </Key>
+    <Property Name="LoanEMITransID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LoanCriteriaID" Type="int" Nullable="false" />
+    <Property Name="InstallmentNo" Type="int" Nullable="false" />
+    <Property Name="Opening" Type="float" Nullable="false" />
+    <Property Name="Principle" Type="float" Nullable="false" />
+    <Property Name="Interest" Type="float" Nullable="false" />
+    <Property Name="EMI" Type="float" Nullable="false" />
+    <Property Name="Closing" Type="float" Nullable="false" />
+    <Property Name="CummulativeInterest" Type="float" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tblLoanEMITransaction_tblLoanCriteria">
+    <End Role="tblLoanCriteria" Type="Self.tblLoanCriteria" Multiplicity="1" />
+    <End Role="tblLoanEMITransaction" Type="Self.tblLoanEMITransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLoanCriteria">
+        <PropertyRef Name="LoanCriteriaID" />
+      </Principal>
+      <Dependent Role="tblLoanEMITransaction">
+        <PropertyRef Name="LoanCriteriaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LoanEMICalculatorModelStoreContainer">
+    <EntitySet Name="tblLoanCriteria" EntityType="Self.tblLoanCriteria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLoanEMITransaction" EntityType="Self.tblLoanEMITransaction" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tblLoanEMITransaction_tblLoanCriteria" Association="Self.FK_tblLoanEMITransaction_tblLoanCriteria">
+      <End Role="tblLoanCriteria" EntitySet="tblLoanCriteria" />
+      <End Role="tblLoanEMITransaction" EntitySet="tblLoanEMITransaction" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LoanEMICalculatorModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblLoanCriteria">
+    <Key>
+      <PropertyRef Name="LoanCriteriaID" />
+    </Key>
+    <Property Name="LoanCriteriaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LoanAmount" Type="Int32" Nullable="false" />
+    <Property Name="LoanInterest" Type="Double" Nullable="false" />
+    <Property Name="NoOfYears" Type="Double" Nullable="false" />
+    <NavigationProperty Name="tblLoanEMITransactions" Relationship="Self.FK_tblLoanEMITransaction_tblLoanCriteria" FromRole="tblLoanCriteria" ToRole="tblLoanEMITransaction" />
+  </EntityType>
+  <EntityType Name="tblLoanEMITransaction">
+    <Key>
+      <PropertyRef Name="LoanEMITransID" />
+    </Key>
+    <Property Name="LoanEMITransID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LoanCriteriaID" Type="Int32" Nullable="false" />
+    <Property Name="InstallmentNo" Type="Int32" Nullable="false" />
+    <Property Name="Opening" Type="Double" Nullable="false" />
+    <Property Name="Principle" Type="Double" Nullable="false" />
+    <Property Name="Interest" Type="Double" Nullable="false" />
+    <Property Name="EMI" Type="Double" Nullable="false" />
+    <Property Name="Closing" Type="Double" Nullable="false" />
+    <Property Name="CummulativeInterest" Type="Double" Nullable="false" />
+    <NavigationProperty Name="tblLoanCriteria" Relationship="Self.FK_tblLoanEMITransaction_tblLoanCriteria" FromRole="tblLoanEMITransaction" ToRole="tblLoanCriteria" />
+  </EntityType>
+  <Association Name="FK_tblLoanEMITransaction_tblLoanCriteria">
+    <End Role="tblLoanCriteria" Type="Self.tblLoanCriteria" Multiplicity="1" />
+    <End Role="tblLoanEMITransaction" Type="Self.tblLoanEMITransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLoanCriteria">
+        <PropertyRef Name="LoanCriteriaID" />
+      </Principal>
+      <Dependent Role="tblLoanEMITransaction">
+        <PropertyRef Name="LoanCriteriaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LoanEMICalculatorEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblLoanCriterias" EntityType="Self.tblLoanCriteria" />
+    <EntitySet Name="tblLoanEMITransactions" EntityType="Self.tblLoanEMITransaction" />
+    <AssociationSet Name="FK_tblLoanEMITransaction_tblLoanCriteria" Association="Self.FK_tblLoanEMITransaction_tblLoanCriteria">
+      <End Role="tblLoanCriteria" EntitySet="tblLoanCriterias" />
+      <End Role="tblLoanEMITransaction" EntitySet="tblLoanEMITransactions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

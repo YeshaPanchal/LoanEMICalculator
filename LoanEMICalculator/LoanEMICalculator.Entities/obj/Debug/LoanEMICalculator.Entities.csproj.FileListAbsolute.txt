@@ -1,0 +1,12 @@
+C:\Users\pci105\source\repos\LoanEMICalculator\LoanEMICalculator.Entities\bin\Debug\LoanEMICalculator.Entities.dll.config
+C:\Users\pci105\source\repos\LoanEMICalculator\LoanEMICalculator.Entities\bin\Debug\LoanEMICalculator.Entities.dll
+C:\Users\pci105\source\repos\LoanEMICalculator\LoanEMICalculator.Entities\bin\Debug\LoanEMICalculator.Entities.pdb
+C:\Users\pci105\source\repos\LoanEMICalculator\LoanEMICalculator.Entities\bin\Debug\EntityFramework.dll
+C:\Users\pci105\source\repos\LoanEMICalculator\LoanEMICalculator.Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\pci105\source\repos\LoanEMICalculator\LoanEMICalculator.Entities\bin\Debug\EntityFramework.xml
+C:\Users\pci105\source\repos\LoanEMICalculator\LoanEMICalculator.Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\pci105\source\repos\LoanEMICalculator\LoanEMICalculator.Entities\obj\Debug\LoanEMICalculator.Entities.csprojAssemblyReference.cache
+C:\Users\pci105\source\repos\LoanEMICalculator\LoanEMICalculator.Entities\obj\Debug\LoanEMICalculator.Entities.csproj.CoreCompileInputs.cache
+C:\Users\pci105\source\repos\LoanEMICalculator\LoanEMICalculator.Entities\obj\Debug\LoanEMICalculator.Entities.csproj.CopyComplete
+C:\Users\pci105\source\repos\LoanEMICalculator\LoanEMICalculator.Entities\obj\Debug\LoanEMICalculator.Entities.dll
+C:\Users\pci105\source\repos\LoanEMICalculator\LoanEMICalculator.Entities\obj\Debug\LoanEMICalculator.Entities.pdb

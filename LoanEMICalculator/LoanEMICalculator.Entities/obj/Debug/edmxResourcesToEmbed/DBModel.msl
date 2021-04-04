@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LoanEMICalculatorModelStoreContainer" CdmEntityContainer="LoanEMICalculatorEntities">
+    <EntitySetMapping Name="tblLoanCriterias">
+      <EntityTypeMapping TypeName="LoanEMICalculatorModel.tblLoanCriteria">
+        <MappingFragment StoreEntitySet="tblLoanCriteria">
+          <ScalarProperty Name="LoanCriteriaID" ColumnName="LoanCriteriaID" />
+          <ScalarProperty Name="LoanAmount" ColumnName="LoanAmount" />
+          <ScalarProperty Name="LoanInterest" ColumnName="LoanInterest" />
+          <ScalarProperty Name="NoOfYears" ColumnName="NoOfYears" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLoanEMITransactions">
+      <EntityTypeMapping TypeName="LoanEMICalculatorModel.tblLoanEMITransaction">
+        <MappingFragment StoreEntitySet="tblLoanEMITransaction">
+          <ScalarProperty Name="LoanEMITransID" ColumnName="LoanEMITransID" />
+          <ScalarProperty Name="LoanCriteriaID" ColumnName="LoanCriteriaID" />
+          <ScalarProperty Name="InstallmentNo" ColumnName="InstallmentNo" />
+          <ScalarProperty Name="Opening" ColumnName="Opening" />
+          <ScalarProperty Name="Principle" ColumnName="Principle" />
+          <ScalarProperty Name="Interest" ColumnName="Interest" />
+          <ScalarProperty Name="EMI" ColumnName="EMI" />
+          <ScalarProperty Name="Closing" ColumnName="Closing" />
+          <ScalarProperty Name="CummulativeInterest" ColumnName="CummulativeInterest" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
